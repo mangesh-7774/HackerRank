@@ -12,27 +12,19 @@ if __name__ == '__main__':
         score = float(input())
         
         students.append([name,score])
-    
-    for stud in students:
-        grades.append(stud[1])
         
-    grades.sort()
-    
+    grades = sorted(set(score for name,score in students))
     secondLowest = grades[1]
+   
     
     final_names = []
     
-    for stud in students :
-        if secondLowest == stud[1] :
-            final_names.append(stud[0])
+    for name,score in students :
+        if score == secondLowest :
+            final_names.append(name)
             
     final_names.sort()
     
-    for stud in final_names :
-        print(stud)
-        
-    
-        
-    
-        
+    for names in sorted(final_names) :
+        print(names)
         
